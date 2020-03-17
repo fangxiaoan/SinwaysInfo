@@ -17,6 +17,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        // this is edit at home computer
+
         ArrayList<GoodsInfo> goodsList = GoodsInfo.getDefault();
         MobilePagerAdapter adapter = new MobilePagerAdapter(getSupportFragmentManager(),goodsList);
         ViewPager vp = findViewById(R.id.vpn_content);
