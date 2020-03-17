@@ -1,5 +1,10 @@
 package com.sinways.sinwaysinfo.bean;
 
+import com.sinways.sinwaysinfo.util.GetNetData;
+
+import org.json.JSONArray;
+import org.json.JSONObject;
+
 import java.util.ArrayList;
 
 public class News {
@@ -21,8 +26,24 @@ public class News {
 
     }
 
-    public ArrayList<News> getNews(){
+    public static ArrayList<News> getNews(){
         ArrayList<News> arrayNews = new ArrayList<News>();
+        try {
+            String newsData = GetNetData.getByteData("http://47.112.213.237:5903/api/v1/getAllNews");
+            //JSONObject jsonObj = null;
+            // jsonObj = new JSONObject(newsData);
+            JSONArray jsonArr = new JSONArray(newsData);
+            for(int i=0;i<jsonArr.length();i++){
+                News news = new News();
+                JSONObject jsonObj = jsonArr.getJSONObject(i);
+                news.news_title = jsonObj.getString("news_title");
+                arrayNews.add(news);
+            }
+
+
+        }catch (Exception e){
+            e.printStackTrace();
+        }
 
 
         return arrayNews;

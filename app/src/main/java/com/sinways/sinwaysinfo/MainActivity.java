@@ -3,17 +3,27 @@ package com.sinways.sinwaysinfo;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
 
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
 import com.sinways.sinwaysinfo.adapter.MobilePagerAdapter;
+import com.sinways.sinwaysinfo.adapter.NewsInfo;
 import com.sinways.sinwaysinfo.bean.GoodsInfo;
 import com.sinways.sinwaysinfo.bean.News;
+import com.sinways.sinwaysinfo.util.HttpReqData;
+import com.sinways.sinwaysinfo.util.HttpRequestUtil;
+import com.sinways.sinwaysinfo.util.HttpRespData;
 import com.sinways.sinwaysinfo.util.MysqlHelper;
+import com.sinways.sinwaysinfo.util.StreamTool;
 
+import java.io.InputStream;
+import java.net.HttpURLConnection;
+import java.net.URL;
 import java.sql.Connection;
 import java.util.ArrayList;
 
@@ -46,27 +56,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View v)  {
         if(v.getId() == R.id.db_test){
-            new MyAsyncTask().execute();
+            Intent intent = new Intent(this, NewsShow.class);
+            startActivity(intent);
         }
     }
 
-    class MyAsyncTask extends AsyncTask<Void,Void,Connection>{
 
-        @Override
-        protected Connection doInBackground(Void... voids) {
 
-            return MysqlHelper.getConn();
-        }
 
-        @Override
-        protected void onPostExecute(Connection connection) {
-            if(connection != null){
-                Toast.makeText(MainActivity.this,"success",Toast.LENGTH_LONG).show();
-            }else{
-                Toast.makeText(MainActivity.this,"faild",Toast.LENGTH_LONG).show();
-            }
-        }
-    }
+
+
 
 
 }
+
+
