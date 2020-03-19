@@ -43,6 +43,9 @@ public class NewsInfo extends BaseAdapter {
          holer = new ViewHolder();
          convertView = LayoutInflater.from(mContext).inflate(R.layout.news,null);
          holer.tv_news = convertView.findViewById(R.id.tv_title);
+         holer.tv_news_from = convertView.findViewById(R.id.news_from);
+         holer.tv_news_date = convertView.findViewById(R.id.news_date);
+         holer.tv_number = convertView.findViewById(R.id.tv_number);
          convertView.setTag(holer);
      }else{
          holer = (ViewHolder)convertView.getTag();
@@ -50,6 +53,9 @@ public class NewsInfo extends BaseAdapter {
 
      News news_one = newsList.get(position);
      holer.tv_news.setText(news_one.news_title);
+     holer.tv_news_from.setText(news_one.news_from);
+     holer.tv_news_date.setText(news_one.news_date);
+     holer.tv_number.setText(Integer.toString(position));
 
 
 
@@ -63,5 +69,8 @@ public class NewsInfo extends BaseAdapter {
 
     public final class ViewHolder{
         public  TextView tv_news;
+        public TextView tv_news_from;
+        public TextView tv_news_date;
+        public TextView tv_number;
     }
 }

@@ -14,6 +14,7 @@ public class News {
     public String news_company;
     public String news_date;
     public String news_time;
+    public String news_from; // 新闻来源
 
 
     public void News(){
@@ -23,6 +24,8 @@ public class News {
         news_company = "";
         news_date = "";
         news_time = "";
+        news_from = "";
+
 
     }
 
@@ -37,6 +40,9 @@ public class News {
                 News news = new News();
                 JSONObject jsonObj = jsonArr.getJSONObject(i);
                 news.news_title = jsonObj.getString("news_title");
+                news.news_date = jsonObj.getString("news_date");
+                news.news_link = jsonObj.getString("news_link");
+                news.news_from = jsonObj.getString("news_link");
                 arrayNews.add(news);
             }
 

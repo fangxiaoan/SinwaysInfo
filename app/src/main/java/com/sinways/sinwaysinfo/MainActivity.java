@@ -27,7 +27,7 @@ import java.net.URL;
 import java.sql.Connection;
 import java.util.ArrayList;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,31 +42,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         vp.setAdapter(adapter);
         vp.setCurrentItem(0);
 
-        Button bt = findViewById(R.id.db_test);
-        bt.setOnClickListener(this);
-
-
-
-
-
 
 
     }
-
-    @Override
-    public void onClick(View v)  {
-        if(v.getId() == R.id.db_test){
-            Intent intent = new Intent(this, NewsShow.class);
-            startActivity(intent);
-        }
-    }
-
-
-
-
-
-
-
 
 }
 

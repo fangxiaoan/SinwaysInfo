@@ -49,12 +49,17 @@ public class NewsShow extends AppCompatActivity {
                 show = show + newss.news_title;
             }
             //tv.setText(show);
-            Toast.makeText(NewsShow.this,show,Toast.LENGTH_LONG).show();
+            //Toast.makeText(NewsShow.this,show,Toast.LENGTH_LONG).show();
 
             NewsInfo newsAdapter = new NewsInfo(mContext,news);
 
             lv.setAdapter(newsAdapter);
 
+        }
+
+        @Override
+        protected void onProgressUpdate(Void... values) {
+            super.onProgressUpdate(values);
         }
     }
 

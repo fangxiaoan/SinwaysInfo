@@ -12,14 +12,10 @@
 
     <androidx.viewpager.widget.ViewPager
         android:layout_width="match_parent"
-        android:layout_height="500dp"
-        android:id="@+id/vpn_content" />
+        android:layout_height="match_parent"
+        android:id="@+id/vpn_content"
+        />
 
 
-    <Button
-        android:id="@+id/db_test"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="db test" />
 
 </LinearLayout>
