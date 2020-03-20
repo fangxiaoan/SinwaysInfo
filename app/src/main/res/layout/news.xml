@@ -7,18 +7,7 @@
     >
 
 
-    <TextView
-        android:id="@+id/tv_number"
-        android:layout_marginRight="10dp"
-        android:layout_width="25dp"
-        android:layout_height="match_parent"
-        android:gravity="center"
-        android:textAlignment="center"
 
-        android:textColor="#ffffff"
-        android:textStyle="bold"
-        android:textSize="10sp"
-        android:background="#fc1001"/>
 
 
 
@@ -50,6 +39,8 @@
             android:orientation="horizontal"
             android:layout_marginTop="10dp">
 
+
+
             <TextView
                 android:id="@+id/news_from"
                 android:layout_width="0dp"
@@ -69,7 +60,17 @@
                 android:textAlignment="textEnd"
                 />
 
+            <Button
+                android:id="@+id/bt_show_source"
+                android:layout_width="0dp"
+                android:layout_weight="2"
+                android:layout_height="wrap_content"
+                android:text="查看原文"
+                android:background="@drawable/bgcheck"
+                android:textSize="14sp"/>
+
         </LinearLayout>
+
 
 
 

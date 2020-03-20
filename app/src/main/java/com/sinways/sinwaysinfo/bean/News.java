@@ -42,7 +42,7 @@ public class News {
                 news.news_title = jsonObj.getString("news_title");
                 news.news_date = jsonObj.getString("news_date");
                 news.news_link = jsonObj.getString("news_link");
-                news.news_from = jsonObj.getString("news_link");
+                news.news_from = jsonObj.getString("news_from");
                 arrayNews.add(news);
             }
 
